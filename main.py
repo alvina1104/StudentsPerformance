@@ -11,15 +11,6 @@ scaler = joblib.load("scaler.pkl")
 students_app = FastAPI()
 
 
-class StudentsSchema(BaseModel):
-    gender: str
-    race_ethnicity: str
-    parental: str
-    test: str
-    lunch: str
-    math_score: int
-    reading_score: int
-
 
 @students_app.post("/predict")
 async def student_predict(student: StudentsSchema):
